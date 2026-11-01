@@ -540,5 +540,75 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // ==========================================================================
+  // Modern Scroll Reveal Animations & Interactive Card Spotlight Effects
+  // ==========================================================================
+
+  // 1. Target all section headers, cards, titles, hero elements
+  const animHeaders = document.querySelectorAll('.section-header');
+  animHeaders.forEach(header => {
+    header.classList.add('reveal-init');
+  });
+
+  const heroText = document.querySelector('.hero-text');
+  const heroVisual = document.querySelector('.hero-visual');
+  if (heroText) heroText.classList.add('reveal-left');
+  if (heroVisual) heroVisual.classList.add('reveal-right');
+
+  const contactInfo = document.querySelector('.contact-info');
+  const contactFormCont = document.querySelector('.contact-form-container');
+  if (contactInfo) contactInfo.classList.add('reveal-left');
+  if (contactFormCont) contactFormCont.classList.add('reveal-right');
+
+  // Staggered reveal for grids of cards
+  const cardContainers = [
+    { selector: '.about-grid .about-card', delay: 120 },
+    { selector: '.skills-grid .skill-card', delay: 80 },
+    { selector: '.projects-grid .project-card', delay: 150 },
+    { selector: '.metrics-grid .metric-card', delay: 120 },
+    { selector: '.reviews-hub-grid > .card', delay: 140 },
+    { selector: '.contact-method-card', delay: 100 }
+  ];
+
+  cardContainers.forEach(group => {
+    const items = document.querySelectorAll(group.selector);
+    items.forEach((item, index) => {
+      item.classList.add('reveal-init');
+      item.style.transitionDelay = `${(index % 4) * group.delay}ms`;
+    });
+  });
+
+  // IntersectionObserver to trigger animations smoothly on scroll
+  const revealElements = document.querySelectorAll('.reveal-init, .reveal-left, .reveal-right, .reveal-scale');
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        // Once animated, keep it revealed for optimal performance
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, {
+    root: null,
+    threshold: 0.12,
+    rootMargin: '0px 0px -40px 0px'
+  });
+
+  revealElements.forEach(el => revealObserver.observe(el));
+
+  // 2. Interactive Dynamic Spotlight Mouse Effect for Cards
+  const interactiveCards = document.querySelectorAll('.card, .contact-method-card');
+  interactiveCards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
+    });
+  });
 });
+
 

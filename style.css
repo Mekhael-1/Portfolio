@@ -1713,6 +1713,221 @@ html[data-theme="light"] .theme-icon-dark {
   font-style: italic;
 }
 
+/* ==========================================================================
+   Modern & Attractive Animations (Scroll Reveal, Card Glow, Title Shimmer)
+   ========================================================================== */
+
+/* ---------- Section Header Animations & Modern Underline ---------- */
+.section-header h2 {
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(135deg, var(--text) 20%, var(--accent-light) 80%, var(--accent-cyan) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: titleShimmer 8s linear infinite;
+}
+
+@keyframes titleShimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.section-header h2::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-cyan));
+  border-radius: var(--radius-full);
+  margin: 0.8rem auto 0;
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  box-shadow: 0 0 12px var(--accent-glow);
+}
+
+.section-header:hover h2::after {
+  width: 90px;
+  box-shadow: 0 0 20px var(--accent-cyan);
+}
+
+.section-tag {
+  animation: tagFloat 4s ease-in-out infinite alternate;
+}
+
+@keyframes tagFloat {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-3px); }
+}
+
+/* ---------- Scroll Reveal Base States ---------- */
+.reveal-init {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s ease,
+              border-color 0.35s ease;
+  will-change: opacity, transform;
+}
+
+.reveal-init.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Slide in from left */
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-left.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Slide in from right */
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-right.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Scale & Pop */
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.92) translateY(20px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-scale.revealed {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+/* ---------- Dynamic Interactive Card Glow & 3D Tilt ---------- */
+.card,
+.contact-method-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s ease,
+              border-color 0.35s ease,
+              opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Animated Spotlight / Mouse Follow Hover */
+.card::before,
+.contact-method-card::before {
+  content: "";
+  position: absolute;
+  top: var(--mouse-y, -150px);
+  left: var(--mouse-x, -150px);
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+}
+
+.card:hover::before,
+.contact-method-card:hover::before {
+  opacity: 0.65;
+}
+
+/* Top Subtle Animated Border Gradient on Hover */
+.card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-light), var(--accent-cyan), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.6s ease;
+  transform: translateX(-100%);
+  z-index: 2;
+}
+
+.card:hover::after {
+  opacity: 1;
+  transform: translateX(100%);
+  transition: opacity 0.3s ease, transform 1s ease-in-out;
+}
+
+/* Enhanced Hover State */
+.card:hover {
+  transform: translateY(-8px) scale(1.015);
+  box-shadow: 0 18px 40px -10px rgba(79, 128, 255, 0.22),
+              0 0 20px rgba(6, 182, 212, 0.12);
+  border-color: var(--surface-border-hover);
+}
+
+/* Skill Icons Floating Pulse on Hover */
+.skill-card:hover .skill-icon-wrap {
+  transform: scale(1.15) rotate(6deg);
+  box-shadow: 0 10px 25px rgba(79, 128, 255, 0.35);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+}
+
+.skill-icon-wrap {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Metric Cards Pulse Animation */
+.metric-card:hover .metric-icon-wrap {
+  transform: scale(1.12) rotate(-8deg);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.metric-icon-wrap {
+  transition: transform 0.3s ease;
+}
+
+/* Project Cards Image Zoom & Shine */
+.project-card .project-thumb {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card .project-thumb img {
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), filter 0.65s ease;
+}
+
+.project-card:hover .project-thumb img {
+  transform: scale(1.07);
+  filter: contrast(1.04) brightness(1.02);
+}
+
+/* Hero Avatar Floating Breathing Animation */
+.avatar-card {
+  animation: heroFloat 6s ease-in-out infinite alternate;
+}
+
+@keyframes heroFloat {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(0.8deg); }
+  100% { transform: translateY(4px) rotate(-0.5deg); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -1723,3 +1938,4 @@ html[data-theme="light"] .theme-icon-dark {
     transition-duration: 0.01ms !important;
   }
 }
+
