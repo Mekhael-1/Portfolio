@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mekhael Nabil — Front-End Developer</title>
+  <meta name="description" content="Portfolio of Mekhael Nabil, a creative Front-End Developer crafting modern, fast, responsive websites and interactive web experiences.">
+  <meta name="theme-color" content="#090d16">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Mekhael Nabil — Front-End Developer">
+  <meta property="og:description" content="Portfolio of Mekhael Nabil, building clean, high-performance web experiences.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Ambient Glow Background Canvas -->
+  <div class="ambient-glow" aria-hidden="true">
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+    <div class="glow-orb orb-3"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home">
+        Mekhael Nabil <span class="brand-emoji">⚡</span>
+      </a>
+
+      <nav class="nav" aria-label="Main Navigation">
+        <ul class="nav-list" id="nav-list">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#reviews" class="nav-link">Reviews</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Dark / Light Theme Toggle -->
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark/light mode" title="Toggle Theme">
+          <i class="fa-solid fa-moon theme-icon-dark"></i>
+          <i class="fa-solid fa-sun theme-icon-light"></i>
+        </button>
+
+        <a class="btn btn-primary btn-sm header-cta" href="#contact">
+          <span>Let's Talk</span>
+          <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </a>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <div class="badge-status">
+            <span class="status-pulse"></span>
+            <span>Available for new opportunities</span>
+          </div>
+
+          <h1 class="hero-title">
+            Hi, I'm <span class="gradient-text">Mekhael Nabil</span>
+            <span class="subtitle-block">Building modern, fast & accessible web experiences.</span>
+          </h1>
+
+          <p class="lead">
+            Front-End Developer dedicated to crafting pixel-perfect, interactive user interfaces with clean architecture, smooth animations, and top-tier performance.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">
+              <span>View My Work</span>
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+            <a class="btn btn-ghost" href="#contact">
+              <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+              <span>Get in Touch</span>
+            </a>
+          </div>
+
+          <!-- Quick Stats / Highlights -->
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Responsive</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-number">Fast</span>
+              <span class="stat-label">Performance</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-number">Clean</span>
+              <span class="stat-label">Modern Code</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Avatar / Profile Card -->
+        <div class="hero-visual">
+          <div class="avatar-card">
+            <div class="avatar-glow" aria-hidden="true"></div>
+            <figure class="avatar-frame" id="avatar">
+              <div class="avatar-initials" aria-hidden="true">MN</div>
+              <img src="images/FB_IMG_1779625052402.jpg" alt="Mekhael Nabil - Front-End Developer" width="400" height="400" loading="eager">
+            </figure>
+            <div class="avatar-badge">
+              <i class="fa-solid fa-code" aria-hidden="true"></i>
+              <div>
+                <strong>Front-End</strong>
+                <span>Developer</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">About Me</span>
+          <h2>Crafting Digital Experiences with Passion</h2>
+          <p class="section-intro">Transforming creative ideas into functional, engaging, and high-performance websites.</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-card card">
+            <div class="about-icon"><i class="fa-solid fa-laptop-code"></i></div>
+            <h3>Who I Am</h3>
+            <p>I am a passionate Front-End Developer with a keen eye for aesthetic design and clean code. I enjoy turning complex problems into intuitive, responsive, and delightful web solutions.</p>
+          </div>
+
+          <div class="about-card card">
+            <div class="about-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+            <h3>What I Do</h3>
+            <p>I specialize in building responsive web applications with HTML5, CSS3/SCSS, and modern JavaScript (ES6+). Every component is optimized for performance, accessibility, and cross-device smoothness.</p>
+          </div>
+
+          <div class="about-card card">
+            <div class="about-icon"><i class="fa-solid fa-bullseye"></i></div>
+            <h3>My Philosophy</h3>
+            <p>Simplicity, performance, and attention to detail. Great web development is not just about writing code; it's about delivering an effortless user experience that leaves a lasting impression.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Expertise</span>
+          <h2>Technical Skills & Tools</h2>
+          <p class="section-intro">The modern stack and technologies I leverage to build scalable, reliable web applications.</p>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-card card">
+            <div class="skill-icon-wrap" style="--accent-color: #e34f26;">
+              <i class="fa-brands fa-html5"></i>
+            </div>
+            <h3>HTML5</h3>
+            <p>Semantic markup, SEO optimization, and web accessibility (a11y) standards.</p>
+            <span class="skill-level">Advanced</span>
+          </div>
+
+          <div class="skill-card card">
+            <div class="skill-icon-wrap" style="--accent-color: #2965f1;">
+              <i class="fa-brands fa-css3-alt"></i>
+            </div>
+            <h3>CSS3 & Modern Layouts</h3>
+            <p>Flexbox, CSS Grid, custom properties, animations, and responsive architecture.</p>
+            <span class="skill-level">Advanced</span>
+          </div>
+
+          <div class="skill-card card">
+            <div class="skill-icon-wrap" style="--accent-color: #f7df1e;">
+              <i class="fa-brands fa-js"></i>
+            </div>
+            <h3>JavaScript (ES6+)</h3>
+            <p>Modern syntax, DOM manipulation, asynchronous fetching (APIs), and interactive UI logic.</p>
+            <span class="skill-level">Proficient</span>
+          </div>
+
+          <div class="skill-card card">
+            <div class="skill-icon-wrap" style="--accent-color: #38bdf8;">
+              <i class="fa-solid fa-mobile-screen"></i>
+            </div>
+            <h3>Responsive Web Design</h3>
+            <p>Mobile-first approach ensuring seamless browsing across smartphones, tablets, and wide screens.</p>
+            <span class="skill-level">Mastered</span>
+          </div>
+
+          <div class="skill-card card">
+            <div class="skill-icon-wrap" style="--accent-color: #f05032;">
+              <i class="fa-brands fa-git-alt"></i>
+            </div>
+            <h3>Git & Version Control</h3>
+            <p>Branch management, version tracking, and collaborative GitHub workflows.</p>
+            <span class="skill-level">Proficient</span>
+          </div>
+
+          <div class="skill-card card">
+            <div class="skill-icon-wrap" style="--accent-color: #a855f7;">
+              <i class="fa-solid fa-gauge-high"></i>
+            </div>
+            <h3>Web Performance & SEO</h3>
+            <p>Lighthouse optimization, image optimization, clean architecture, and best practices.</p>
+            <span class="skill-level">Dedicated</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Portfolio</span>
+          <h2>Featured Projects</h2>
+          <p class="section-intro">Explore a selection of recent web applications and responsive projects crafted with attention to detail.</p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1 -->
+          <article class="card project-card">
+            <div class="project-thumb thumb-preview-1">
+              <img src="images/screen 3.jpeg" alt="Mekhael DASH Preview">
+              <div class="thumb-overlay">
+                <a href="https://mekhael-1.github.io/car-showroom/" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                </a>
+              </div>
+              <div class="thumb-badge">Featured Dashboard</div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Mekhael Dashboard & Analytics</h3>
+              <p class="project-desc">A modern, responsive administrative analytics UI featuring custom dark mode theme, interactive cards, and live layout styling.</p>
+              <ul class="tags">
+                <li>HTML5</li>
+                <li>CSS Grid</li>
+                <li>JavaScript ES6</li>
+                <li>Responsive UI</li>
+              </ul>
+              <div class="card-actions">
+                <a class="btn btn-primary btn-sm" href="https://mekhael-1.github.io/car-showroom/" target="_blank" rel="noopener">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                </a>
+                <a class="btn btn-ghost btn-sm" href="https://github.com/Mekhael-1/car-showroom" target="_blank" rel="noopener">
+                  <i class="fa-brands fa-github"></i> Source Code
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="card project-card">
+            <div class="project-thumb thumb-preview-2">
+              <img src="images/screen.jpeg" alt="Kasper Landing Page Preview">
+              <div class="thumb-overlay">
+                <a href="https://mekhael-1.github.io/private-jet-site/" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                </a>
+              </div>
+              <div class="thumb-badge">Template 2</div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Kasper Creative Agency</h3>
+              <p class="project-desc">A clean, pixel-perfect responsive landing page with engaging hero section, portfolio showcase, services, and pricing tables.</p>
+              <ul class="tags">
+                <li>HTML5</li>
+                <li>CSS Flexbox</li>
+                <li>CSS Grid</li>
+                <li>Responsive</li>
+              </ul>
+              <div class="card-actions">
+                <a class="btn btn-primary btn-sm" href="https://mekhael-1.github.io/private-jet-site/" target="_blank" rel="noopener">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                </a>
+                <a class="btn btn-ghost btn-sm" href="https://github.com/Mekhael-1/private-jet-site" target="_blank" rel="noopener">
+                  <i class="fa-brands fa-github"></i> Source Code
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="card project-card">
+            <div class="project-thumb thumb-preview-3">
+              <img src="images/screen 2.jpeg" alt="Leon Template Preview">
+              <div class="thumb-overlay">
+                <a href="https://mekhael-1.github.io/luxury-safari/" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                </a>
+              </div>
+              <div class="thumb-badge">Template 1</div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Leon Agency Template</h3>
+              <p class="project-desc">An elegant and clean agency website built with semantic HTML, modern CSS styling, mobile-first responsiveness, and smooth layout flow.</p>
+              <ul class="tags">
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>Semantic Web</li>
+                <li>Mobile First</li>
+              </ul>
+              <div class="card-actions">
+                <a class="btn btn-primary btn-sm" href="https://mekhael-1.github.io/luxury-safari/" target="_blank" rel="noopener">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                </a>
+                <a class="btn btn-ghost btn-sm" href="https://github.com/Mekhael-1/luxury-safari" target="_blank" rel="noopener">
+                  <i class="fa-brands fa-github"></i> Source Code
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews & Live Views Section -->
+    <section id="reviews" class="section reviews-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Community & Analytics</span>
+          <h2>Ratings & Live Views</h2>
+          <p class="section-intro">Real-time engagement, visitor analytics, and feedback from clients & visitors.</p>
+        </div>
+
+        <!-- Metrics Dashboard Cards -->
+        <div class="metrics-grid">
+          <!-- Views Metric Card -->
+          <div class="metric-card card glow-border">
+            <div class="metric-icon-wrap icon-cyan">
+              <i class="fa-solid fa-eye"></i>
+            </div>
+            <div class="metric-content">
+              <span class="metric-label">Portfolio Views</span>
+              <div class="metric-counter-row">
+                <span class="metric-value counter-animate" id="views-counter" data-target="1420">0</span>
+                <span class="metric-badge live-pulse">
+                  <span class="pulse-dot"></span> Live
+                </span>
+              </div>
+              <p class="metric-detail" id="views-subtext">Triggered smoothly upon arrival</p>
+            </div>
+          </div>
+
+          <!-- Average Rating Metric Card -->
+          <div class="metric-card card glow-border">
+            <div class="metric-icon-wrap icon-amber">
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="metric-content">
+              <span class="metric-label">Average Rating</span>
+              <div class="metric-counter-row">
+                <span class="metric-value counter-animate" id="avg-rating-val" data-target="4.9" data-decimals="1">0.0</span>
+                <span class="rating-max">/ 5.0</span>
+              </div>
+              <div class="stars-display" id="avg-stars-display" aria-label="Rating 4.9 out of 5 stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Total Reviews Metric Card -->
+          <div class="metric-card card glow-border">
+            <div class="metric-icon-wrap icon-purple">
+              <i class="fa-solid fa-comments"></i>
+            </div>
+            <div class="metric-content">
+              <span class="metric-label">Total Reviews</span>
+              <div class="metric-counter-row">
+                <span class="metric-value counter-animate" id="total-reviews-count" data-target="38">0</span>
+                <span class="metric-badge positive">+100% Satisfaction</span>
+              </div>
+              <p class="metric-detail">Verified visitor feedback</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Rating & Testimonials Hub -->
+        <div class="reviews-hub-grid">
+          <!-- Left: Leave a Rating Card -->
+          <div class="card feedback-card">
+            <div class="feedback-header">
+              <div class="feedback-header-icon">
+                <i class="fa-solid fa-award"></i>
+              </div>
+              <div>
+                <h3 class="feedback-title">Rate This Portfolio</h3>
+                <p class="feedback-desc">Share your instant feedback and rating in seconds!</p>
+              </div>
+            </div>
+
+            <form id="rating-form" class="rating-interactive-form">
+              <div class="star-rating-select-group">
+                <span class="star-rating-label">Your Rating:</span>
+                <div class="interactive-star-rating" id="interactive-star-rating" role="radiogroup" aria-label="Rate from 1 to 5 stars">
+                  <button type="button" class="star-btn" data-value="1" aria-label="1 star"><i class="fa-solid fa-star"></i></button>
+                  <button type="button" class="star-btn" data-value="2" aria-label="2 stars"><i class="fa-solid fa-star"></i></button>
+                  <button type="button" class="star-btn" data-value="3" aria-label="3 stars"><i class="fa-solid fa-star"></i></button>
+                  <button type="button" class="star-btn" data-value="4" aria-label="4 stars"><i class="fa-solid fa-star"></i></button>
+                  <button type="button" class="star-btn active" data-value="5" aria-label="5 stars"><i class="fa-solid fa-star"></i></button>
+                </div>
+                <span class="rating-verbal-feedback" id="rating-verbal-feedback">Exceptional Work! 🌟</span>
+              </div>
+
+              <div class="field">
+                <label for="reviewer-name">Your Name or Role</label>
+                <div class="input-wrapper">
+                  <i class="fa-regular fa-user input-icon"></i>
+                  <input id="reviewer-name" name="reviewer-name" type="text" placeholder="e.g. Alex / UI Designer" required>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="reviewer-comment">Feedback or Impression</label>
+                <div class="input-wrapper">
+                  <textarea id="reviewer-comment" name="reviewer-comment" rows="3" placeholder="What caught your attention the most?" required></textarea>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-submit-rating">
+                <span>Submit Rating</span>
+                <i class="fa-solid fa-check"></i>
+              </button>
+
+              <div class="rating-submit-msg" id="rating-submit-msg" role="status" aria-live="polite"></div>
+            </form>
+          </div>
+
+          <!-- Right: Community Feed & Testimonials -->
+          <div class="card community-reviews-card">
+            <div class="community-header">
+              <h3 class="community-title">Recent Impressions</h3>
+              <span class="community-badge" id="recent-badge">Live Updates</span>
+            </div>
+
+            <div class="testimonials-feed" id="testimonials-feed">
+              <!-- Dynamically populated or rendered items -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+      <div class="container">
+        <div class="contact-wrapper">
+          <div class="contact-info">
+            <span class="section-tag">Contact</span>
+            <h2>Let's build something amazing together</h2>
+            <p class="contact-desc">
+              Have an exciting project, freelance opportunity, or just want to connect? My inbox is always open.
+            </p>
+
+            <div class="contact-methods">
+              <a href="mailto:sefennabil75@gmail.com" class="contact-method-card">
+                <div class="method-icon"><i class="fa-regular fa-envelope"></i></div>
+                <div>
+                  <span class="method-label">Direct Email</span>
+                  <span class="method-value">sefennabil75@gmail.com</span>
+                </div>
+              </a>
+
+              <div class="contact-method-card">
+                <div class="method-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div>
+                  <span class="method-label">Location</span>
+                  <span class="method-value">Available Globally / Remote</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="socials-wrapper">
+              <span class="socials-title">Follow & Connect</span>
+              <ul class="socials">
+                <li>
+                  <a href="https://github.com/Mekhael-1" target="_blank" rel="noopener" aria-label="GitHub Profile">
+                    <i class="fa-brands fa-github"></i> <span>GitHub</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.facebook.com/IiIElFr3oNeIiI" target="_blank" rel="noopener" aria-label="Facebook Profile">
+                    <i class="fa-brands fa-facebook"></i> <span>Facebook</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/mi5aelwinch?mdxt=MXdtYnBod3ZmMDczYQ==" target="_blank" rel="noopener" aria-label="Instagram Profile">
+                    <i class="fa-brands fa-instagram"></i> <span>Instagram</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sefennabil75@gmail.com" target="_blank" rel="noopener" aria-label="Gmail Direct">
+                    <i class="fa-solid fa-paper-plane"></i> <span>Gmail</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="contact-form-container">
+            <form id="contact-form" class="card form" novalidate>
+              <h3 class="form-title">Send a Direct Message</h3>
+              <div class="field">
+                <label for="name">Your Name</label>
+                <div class="input-wrapper"> 
+                  <i class="fa-regular fa-user input-icon"></i>
+                  <input id="name" name="name" type="text" placeholder="John Doe" autocomplete="name" required>
+                </div>
+                <small class="error" id="name-error"></small>
+              </div>
+
+              <div class="field">
+                <label for="email">Email Address</label>
+                <div class="input-wrapper">
+                  <i class="fa-regular fa-envelope input-icon"></i>
+                  <input id="email" name="email" type="email" placeholder="john@example.com" autocomplete="email" required>
+                </div>
+                <small class="error" id="email-error"></small>
+              </div>
+
+              <div class="field">
+                <label for="message">Message</label>
+                <div class="input-wrapper">
+                  <textarea id="message" name="message" rows="5" placeholder="Tell me about your project or inquiry..." required></textarea>
+                </div>
+                <small class="error" id="message-error"></small>
+              </div>
+
+              <button class="btn btn-primary btn-submit" type="submit">
+                <span>Send Message</span>
+                <i class="fa-solid fa-paper-plane"></i>
+              </button>
+
+              <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <a class="brand" href="#home">
+          Mekhael Nabil <span class="brand-emoji">⚡</span>
+        </a>
+        <p>Crafting high-impact digital experiences with clean code & modern design.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> Mekhael Nabil. All rights reserved.</p>
+        <button id="footer-scroll-top-btn" class="footer-scroll-btn" aria-label="Scroll to top">
+          <i class="fa-solid fa-chevron-up"></i>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Floating Scroll To Top Button -->
+  <button id="floating-scroll-top" class="floating-scroll-top" aria-label="Scroll back to top" title="Scroll to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="app.js"></script>
+</body>
+</html>
