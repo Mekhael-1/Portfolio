@@ -6,6 +6,7 @@ import { Project } from '../types';
 import { ProjectCard } from '../components/ProjectCard';
 import { ScrollReveal } from '../components/ScrollReveal';
 import { GithubIcon } from '../components/SocialIcons';
+import { getAssetUrl } from '../utils/assets';
 
 export const ProjectsPage: React.FC = () => {
   const { language } = useTheme();
@@ -111,7 +112,7 @@ export const ProjectsPage: React.FC = () => {
 
             <div className="aspect-video rounded-2xl overflow-hidden mb-6 bg-slate-950">
               <img
-                src={selectedProject.image}
+                src={getAssetUrl(selectedProject.image)}
                 alt={selectedProject.title}
                 className="w-full h-full object-cover"
               />

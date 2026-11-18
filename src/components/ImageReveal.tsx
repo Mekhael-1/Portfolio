@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { getAssetUrl } from '../utils/assets';
 
 interface ImageRevealProps {
   src: string;
@@ -26,7 +27,7 @@ export const ImageReveal: React.FC<ImageRevealProps> = ({
 
       {/* Floating Modern Image */}
       <img
-        src={src}
+        src={getAssetUrl(src)}
         alt={alt}
         loading="lazy"
         onLoad={() => setIsLoaded(true)}

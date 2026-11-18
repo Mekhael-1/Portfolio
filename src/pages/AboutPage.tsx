@@ -2,6 +2,7 @@ import React from 'react';
 import { User, Terminal, Sparkles, Laptop, Award, CheckCircle } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 import { ScrollReveal } from '../components/ScrollReveal';
+import { getAssetUrl } from '../utils/assets';
 
 export const AboutPage: React.FC = () => {
   const { language } = useTheme();
@@ -86,7 +87,7 @@ export const AboutPage: React.FC = () => {
                 <div className="absolute -inset-2 bg-gradient-to-r from-cyan-500 via-blue-500 to-indigo-600 rounded-3xl blur-lg opacity-40 group-hover:opacity-70 transition duration-500" />
                 <div className="relative rounded-2xl overflow-hidden border-2 border-slate-200 dark:border-slate-800 shadow-2xl bg-slate-900 aspect-[4/5]">
                   <img
-                    src="/images/FB_IMG_1779625006967.jpg"
+                    src={getAssetUrl("/images/FB_IMG_1779625006967.jpg")}
                     alt="Mekhael Nabil Coding"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
