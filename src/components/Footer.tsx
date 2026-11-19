@@ -17,9 +17,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
   const navLinks = [
     { id: 'home', labelEn: 'Home', labelAr: 'الرئيسية' },
     { id: 'projects', labelEn: 'Projects', labelAr: 'معرض المشاريع' },
-    { id: 'about', labelEn: 'About', labelAr: 'من أنا' },
     { id: 'skills', labelEn: 'Skills', labelAr: 'المهارات والتقنيات' },
-    { id: 'reviews', labelEn: 'Reviews', labelAr: 'التقييمات' },
     { id: 'contact', labelEn: 'Contact', labelAr: 'اتصل بي' },
   ];
 
@@ -144,7 +142,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-slate-200/70 dark:border-slate-800/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-400">
           <p className="flex items-center gap-1">
-            <span>© {new Date().getFullYear()} Mekhael Nabil. Built with</span>
+            <span>© {new Date().getFullYear()} Mekhael Nabil</span>
           </p>
 
           <button

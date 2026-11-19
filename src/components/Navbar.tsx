@@ -23,9 +23,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
   const navLinks = [
     { id: 'home', labelEn: 'Home', labelAr: 'الرئيسية' },
     { id: 'projects', labelEn: 'Projects', labelAr: 'المشاريع' },
-    { id: 'about', labelEn: 'About', labelAr: 'عني' },
     { id: 'skills', labelEn: 'Skills', labelAr: 'المهارات' },
-    { id: 'reviews', labelEn: 'Reviews', labelAr: 'التقييمات' },
     { id: 'contact', labelEn: 'Contact', labelAr: 'التواصل' },
   ];
 
