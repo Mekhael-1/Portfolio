@@ -170,5 +170,14 @@ export const INITIAL_REVIEWS: Review[] = [
     comment: 'Top-tier developer! The interactive private jet platform looks world-class, with remarkable responsiveness and zero lag during bookings.',
     date: 'Recent',
     avatar: 'DR'
+  },
+  {
+    id: 'rev-4',
+    name: 'Eng. Omar Khaled',
+    role: 'CEO & Founder at Roaster Hub',
+    rating: 5,
+    comment: 'موقع كافيه ومحمصة القهوة فاق كل توقعاتنا! الفلاتر سريعة للغاية، وحجز الطاولات سلس، وتجربة المستخدم أنيقة جداً وتتناسب مع هوية البراند.',
+    date: 'Recent',
+    avatar: 'OK'
   }
 ];

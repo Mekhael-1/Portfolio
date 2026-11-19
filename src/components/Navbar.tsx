@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Sun, Moon, Menu, X, Globe, Sparkles } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
+import { Mini3DRobot } from './Mini3DRobot';
 
 interface NavbarProps {
   currentPage: string;
@@ -55,9 +56,9 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
                   M
                 </div>
                 <div>
-                  <span className="font-extrabold text-lg sm:text-xl tracking-tight text-slate-900 dark:text-white flex items-center gap-1.5 transition-colors group-hover:text-cyan-500">
+                  <span className="font-extrabold text-lg sm:text-xl tracking-tight text-slate-900 dark:text-white flex items-center gap-2 transition-colors group-hover:text-cyan-500">
                     <span>Mekhael Nabil</span>
-                    <span className="text-cyan-500 inline-block animate-pulse">⚡</span>
+                    <Mini3DRobot size={24} />
                   </span>
                   <span className="text-[11px] font-semibold text-slate-500 dark:text-cyan-400 tracking-wide uppercase block -mt-1">
                     {language === 'ar' ? 'مطور واجهات أمامية' : 'Front-End Developer'}

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Mail, MapPin, Send, CheckCircle2, MessageSquare } from 'lucide-react';
+import { Mail, MapPin, Send, CheckCircle2, MessageSquare, Phone } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { useTheme } from '../context/ThemeContext';
 import { ScrollReveal } from '../components/ScrollReveal';
-import { GithubIcon, FacebookIcon, InstagramIcon } from '../components/SocialIcons';
+import { GithubIcon, FacebookIcon, InstagramIcon, WhatsAppIcon } from '../components/SocialIcons';
 
 export const ContactPage: React.FC = () => {
   const { language } = useTheme();
@@ -82,11 +82,34 @@ export const ContactPage: React.FC = () => {
                 </p>
               </div>
 
-              {/* Direct Gmail Card with Guaranteed Opening */}
+              {/* Direct Contact Cards (WhatsApp, Phone, Gmail) */}
               <div className="space-y-4 pt-2">
+                {/* WhatsApp & Direct Call Card */}
+                <a
+                  href="https://wa.me/201026267645"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="p-5 rounded-2xl bg-white dark:bg-zinc-950 border-2 border-emerald-500/40 hover:border-emerald-500 flex items-center gap-4 hover:shadow-xl hover:shadow-emerald-500/15 transition-all group cursor-pointer"
+                  title="تواصل مباشرة عبر واتساب"
+                >
+                  <div className="w-13 h-13 rounded-2xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:bg-emerald-500 group-hover:text-white transition-all shadow-md">
+                    <WhatsAppIcon className="w-6 h-6" />
+                  </div>
+                  <div className="flex-1">
+                    <div className="text-xs text-slate-500 font-semibold mb-0.5 flex items-center justify-between">
+                      <span>{language === 'ar' ? 'رقم الهاتف والواتساب المباشر' : 'Direct Phone & WhatsApp'}</span>
+                      <span className="text-[10px] text-emerald-500 font-bold">Chat Now &rarr;</span>
+                    </div>
+                    <div className="text-base sm:text-lg font-extrabold text-slate-900 dark:text-white group-hover:text-emerald-500 transition-colors" dir="ltr">
+                      01026267645
+                    </div>
+                  </div>
+                </a>
+
+                {/* Direct Gmail Card with Guaranteed Opening */}
                 <a
                   href={`mailto:${directEmail}?subject=${encodeURIComponent('استفسار بخصوص مشروع ويب جديد')}`}
-                  className="p-5 rounded-2xl bg-white dark:bg-slate-900 border-2 border-cyan-500/30 hover:border-cyan-500 flex items-center gap-4 hover:shadow-xl hover:shadow-cyan-500/15 transition-all group cursor-pointer"
+                  className="p-5 rounded-2xl bg-white dark:bg-zinc-950 border-2 border-cyan-500/30 hover:border-cyan-500 flex items-center gap-4 hover:shadow-xl hover:shadow-cyan-500/15 transition-all group cursor-pointer"
                   title="اضغط لفتح تطبيق الجيميل فوراً"
                 >
                   <div className="w-13 h-13 rounded-2xl bg-cyan-500/10 text-cyan-500 flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:bg-cyan-500 group-hover:text-white transition-all shadow-md">

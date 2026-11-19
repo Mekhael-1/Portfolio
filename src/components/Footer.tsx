@@ -1,7 +1,8 @@
 import React from 'react';
-import { Mail, Heart, ArrowUp } from 'lucide-react';
+import { Mail, Heart, ArrowUp, Phone } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
-import { GithubIcon, FacebookIcon, InstagramIcon } from './SocialIcons';
+import { GithubIcon, FacebookIcon, InstagramIcon, WhatsAppIcon } from './SocialIcons';
+import { Mini3DRobot } from './Mini3DRobot';
 
 interface FooterProps {
   onNavigate: (page: string) => void;
@@ -36,10 +37,10 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 M
               </div>
               <div>
-                <span className="font-extrabold text-xl tracking-tight text-slate-900 dark:text-white">
-                  Mekhael Nabil
+                <span className="font-extrabold text-xl tracking-tight text-slate-900 dark:text-white flex items-center gap-2">
+                  <span>Mekhael Nabil</span>
+                  <Mini3DRobot size={24} />
                 </span>
-                <span className="text-cyan-500 text-sm ml-1 font-bold">⚡</span>
               </div>
             </div>
             
@@ -49,41 +50,56 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 : 'Creative Front-End Developer dedicated to crafting pixel-perfect, interactive web applications with modern design systems and top-tier responsiveness.'}
             </p>
 
-            {/* Social Icons */}
-            <div className="flex items-center gap-3 pt-2">
+            {/* Social Icons & Direct Contact Links */}
+            <div className="flex flex-wrap items-center gap-2.5 pt-2">
+              <a
+                href="https://wa.me/201026267645"
+                target="_blank"
+                rel="noreferrer"
+                className="px-3.5 py-2 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500 hover:text-white transition-all text-xs font-bold flex items-center gap-1.5 shadow-sm"
+                title="WhatsApp"
+              >
+                <WhatsAppIcon className="w-4 h-4" />
+                <span>واتساب</span>
+              </a>
+
+              <a
+                href="tel:01026267645"
+                className="px-3.5 py-2 rounded-xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-600 dark:text-cyan-400 hover:bg-cyan-500 hover:text-white transition-all text-xs font-bold flex items-center gap-1.5 shadow-sm"
+                title="اتصال هاتف"
+              >
+                <Phone className="w-3.5 h-3.5" />
+                <span dir="ltr">01026267645</span>
+              </a>
+
               <a
                 href="https://github.com/Mekhael-1"
                 target="_blank"
                 rel="noreferrer"
-                className="w-10 h-10 rounded-xl bg-slate-200/60 dark:bg-slate-900 border border-slate-300/60 dark:border-slate-800 flex items-center justify-center text-slate-700 dark:text-slate-300 hover:text-cyan-500 hover:border-cyan-500 transition-all hover:scale-105"
+                className="w-9 h-9 rounded-xl bg-slate-200/60 dark:bg-zinc-900 border border-slate-300/60 dark:border-white/10 flex items-center justify-center text-slate-700 dark:text-slate-300 hover:text-cyan-500 transition-all hover:scale-105"
                 title="GitHub"
               >
-                <GithubIcon className="w-5 h-5" />
+                <GithubIcon className="w-4 h-4" />
               </a>
+
               <a
                 href="https://www.facebook.com/IiIElFr3oNeIiI"
                 target="_blank"
                 rel="noreferrer"
-                className="w-10 h-10 rounded-xl bg-slate-200/60 dark:bg-slate-900 border border-slate-300/60 dark:border-slate-800 flex items-center justify-center text-slate-700 dark:text-slate-300 hover:text-blue-500 hover:border-blue-500 transition-all hover:scale-105"
+                className="w-9 h-9 rounded-xl bg-slate-200/60 dark:bg-zinc-900 border border-slate-300/60 dark:border-white/10 flex items-center justify-center text-slate-700 dark:text-slate-300 hover:text-blue-500 transition-all hover:scale-105"
                 title="Facebook"
               >
-                <FacebookIcon className="w-5 h-5" />
+                <FacebookIcon className="w-4 h-4 text-blue-500" />
               </a>
+
               <a
                 href="https://www.instagram.com/mi5aelwinch?mdxt=MXdtYnBod3ZmMDczYQ=="
                 target="_blank"
                 rel="noreferrer"
-                className="w-10 h-10 rounded-xl bg-slate-200/60 dark:bg-slate-900 border border-slate-300/60 dark:border-slate-800 flex items-center justify-center text-slate-700 dark:text-slate-300 hover:text-pink-500 hover:border-pink-500 transition-all hover:scale-105"
+                className="w-9 h-9 rounded-xl bg-slate-200/60 dark:bg-zinc-900 border border-slate-300/60 dark:border-white/10 flex items-center justify-center text-slate-700 dark:text-slate-300 hover:text-pink-500 transition-all hover:scale-105"
                 title="Instagram"
               >
-                <InstagramIcon className="w-5 h-5" />
-              </a>
-              <a
-                href="mailto:sefennabil75@gmail.com"
-                className="w-10 h-10 rounded-xl bg-slate-200/60 dark:bg-slate-900 border border-slate-300/60 dark:border-slate-800 flex items-center justify-center text-slate-700 dark:text-slate-300 hover:text-amber-500 hover:border-amber-500 transition-all hover:scale-105"
-                title="Email"
-              >
-                <Mail className="w-5 h-5" />
+                <InstagramIcon className="w-4 h-4 text-pink-500" />
               </a>
             </div>
           </div>
@@ -113,6 +129,18 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               {language === 'ar' ? 'معلومات التواصل' : 'Direct Reach'}
             </h4>
             <div className="space-y-3 text-sm text-slate-600 dark:text-slate-400">
+              <p>
+                <span className="font-semibold text-slate-800 dark:text-slate-200">Phone & WhatsApp:</span>{' '}
+                <a
+                  href="https://wa.me/201026267645"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-emerald-500 transition-colors font-bold text-slate-900 dark:text-white"
+                  dir="ltr"
+                >
+                  01026267645
+                </a>
+              </p>
               <p>
                 <span className="font-semibold text-slate-800 dark:text-slate-200">Email:</span>{' '}
                 <a

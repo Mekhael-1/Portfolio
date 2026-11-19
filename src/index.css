@@ -26,24 +26,18 @@
   }
 }
 
-/* 🌀 Circular Scroll Reveal Animation Classes - Smooth, Native & Never Freezes */
+/* 🌀 Smooth Progressive Scroll Reveal Animation - Elegant, Native & Soft */
 .circular-reveal {
-  opacity: 0.15;
-  clip-path: circle(20% at 50% 50%);
-  -webkit-clip-path: circle(20% at 50% 50%);
-  transform: scale(0.92) translateY(24px) rotate(2deg);
-  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1),
-              clip-path 0.75s cubic-bezier(0.16, 1, 0.3, 1),
-              -webkit-clip-path 0.75s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: transform, opacity, clip-path;
+  opacity: 0;
+  transform: translateY(32px) scale(0.97);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
 }
 
 .circular-reveal.is-revealed {
   opacity: 1;
-  clip-path: circle(150% at 50% 50%);
-  -webkit-clip-path: circle(150% at 50% 50%);
-  transform: scale(1) translateY(0) rotate(0deg);
+  transform: translateY(0) scale(1);
 }
 
 /* Twinkling star animation */

@@ -8,6 +8,7 @@ import { ScrollReveal } from '../components/ScrollReveal';
 import { CyberHologramAvatar } from '../components/CyberHologramAvatar';
 import { ProjectsSlider } from '../components/ProjectsSlider';
 import { getAssetUrl } from '../utils/assets';
+import { AnimatedCounter } from '../components/AnimatedCounter';
 
 interface HomePageProps {
   onNavigate: (page: string) => void;
@@ -466,11 +467,13 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             </ScrollReveal>
           </div>
 
-          {/* Live Metrics Row */}
+          {/* Live Metrics Row with Progressive Animated Counters */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
             <ScrollReveal effect="floating" delay={100}>
               <div className="p-6 rounded-2xl bg-white dark:bg-zinc-950/80 border border-slate-200 dark:border-white/10 text-center shadow-sm">
-                <div className="text-4xl font-extrabold text-cyan-400 mb-1">1,480+</div>
+                <div className="text-4xl font-extrabold text-cyan-400 mb-1">
+                  <AnimatedCounter end={1480} duration={2400} suffix="+" />
+                </div>
                 <div className="text-sm font-semibold text-slate-900 dark:text-white mb-0.5">
                   {language === 'ar' ? 'زيارات وتفاعل حقيقي' : 'Live Portfolio Visits'}
                 </div>
@@ -483,7 +486,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             <ScrollReveal effect="floating" delay={200}>
               <div className="p-6 rounded-2xl bg-white dark:bg-zinc-950/80 border border-slate-200 dark:border-white/10 text-center shadow-sm">
                 <div className="text-4xl font-extrabold text-amber-400 mb-1 flex items-center justify-center gap-1">
-                  <span>{avgRating}</span>
+                  <AnimatedCounter end={parseFloat(avgRating)} duration={1800} decimals={1} />
                   <span className="text-lg text-slate-400">/ 5.0</span>
                 </div>
                 <div className="flex items-center justify-center gap-1 text-amber-400 mb-1">
@@ -499,7 +502,9 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
 
             <ScrollReveal effect="floating" delay={300}>
               <div className="p-6 rounded-2xl bg-white dark:bg-zinc-950/80 border border-slate-200 dark:border-white/10 text-center shadow-sm">
-                <div className="text-4xl font-extrabold text-emerald-400 mb-1">100%</div>
+                <div className="text-4xl font-extrabold text-emerald-400 mb-1">
+                  <AnimatedCounter end={100} duration={2000} suffix="%" />
+                </div>
                 <div className="text-sm font-semibold text-slate-900 dark:text-white mb-0.5">
                   {language === 'ar' ? 'نسبة رضا العملاء' : 'Client Satisfaction'}
                 </div>
